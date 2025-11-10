@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Netanel Nagar · Portfolio
 
-## Getting Started
+A Next.js 14 application showcasing projects, experience, and contact details for Netanel Nagar, Full Stack Developer.
 
-First, run the development server:
+## Tech Stack
+
+- **Next.js App Router**
+- **TypeScript**
+- **Tailwind CSS**
+- **Firebase Firestore & Storage**
+- **Vercel Fonts (Geist, Inter)**
+
+## Features
+
+- Dynamic resume and projects pages rendered with Suspense + skeleton fallbacks.
+- Firebase-powered data layer for portfolio content and media assets.
+- Global UI components (navbar, footer, toast systems) and theme-aligned styling.
+- Optimized image handling with SSR-safe animations and placeholders.
+
+## Project Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create `.env.local`:
 
-## Learn More
+```
+NEXT_PUBLIC_SITE_URL=https://netanelnagar.com
+NEXT_PUBLIC_ABOUT_HEADER=Passionate Developer & Lifelong Learner
+NEXT_PUBLIC_ABOUT_BODY=...
+NEXT_PUBLIC_ABOUT_LINKEDIN=https://linkedin.com/in/...
+NEXT_PUBLIC_ABOUT_GITHUB=https://github.com/...
+NEXT_PUBLIC_WHATSAPP_LINK=https://wa.me/...
+FIREBASE_API_KEY=...
+FIREBASE_AUTH_DOMAIN=...
+FIREBASE_PROJECT_ID=...
+FIREBASE_STORAGE_BUCKET=...
+FIREBASE_MESSAGING_SENDER_ID=...
+FIREBASE_APP_ID=...
+RESUME_FILE_NAME=netanelnagar-fullstack.pdf
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Folder Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/` – App Router pages, layouts, API routes, error boundaries.
+- `components/` – UI sections (Hero, About, resume/projects modules, shared UI kit).
+- `lib/` – Firebase initialization and helpers.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Deploy on [Vercel](https://vercel.com/). Ensure environment variables are set in the project settings.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All rights reserved.
