@@ -1,24 +1,12 @@
 import { CiSaveDown2 } from "react-icons/ci";
 import { HiScissors } from "react-icons/hi2";
 import { IoCodeSlashSharp } from "react-icons/io5";
-import { HomeData } from "@/app/api/data/route";
 import { getUrl } from "@/lib/firebase";
+import { fetchData } from "@/lib/homeData";
 
-
-async function fetchResumeData(): Promise<HomeData> {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/data`, {
-        next: { revalidate: 6000 },
-    });
-
-    if (!response.ok) {
-        throw new Error("Failed to load resume data");
-    }
-
-    return response.json() as Promise<HomeData>;
-}
 
 const ResumeContent = async () => {
-    const data = await fetchResumeData();
+    const { experiences, professionalSkillsAndLanguages } = await fetchData();
     const url = await getUrl(process.env.RESUME_FILE_NAME || "netanelnagar-fullstack.pdf");
     return (
         <>
@@ -36,7 +24,7 @@ const ResumeContent = async () => {
 
             <div>
                 <div className="space-y-8 mt-5">
-                    {data.experiences.map((experience, index) => (
+                    {experiences.map((experience, index) => (
                         <div
                             key={`${experience.company}-${experience.period}-${index}`}
                             className="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow grid grid-cols-1 md:grid-cols-3 gap-4"
@@ -67,7 +55,7 @@ const ResumeContent = async () => {
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {data.professionalSkillsAndLanguages.professionalSkills.map((skill) => (
+                        {professionalSkillsAndLanguages.professionalSkills.map((skill) => (
                             <div key={skill} className="p-4 bg-gray-50 rounded-lg">
                                 {skill}
                             </div>
@@ -83,7 +71,7 @@ const ResumeContent = async () => {
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {data.professionalSkillsAndLanguages.languages.map((language) => (
+                        {professionalSkillsAndLanguages.languages.map((language) => (
                             <div key={language} className="p-4 bg-gray-50 rounded-lg">
                                 {language}
                             </div>

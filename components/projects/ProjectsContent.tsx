@@ -1,25 +1,10 @@
 import { FaGithub } from "react-icons/fa6";
 import ImageP from "@/components/ImageP";
-import { HomeData } from "@/app/api/data/route";
+import { fetchData } from "@/lib/homeData";
 
-
-
-async function fetchProjects(): Promise<HomeData> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  const res = await fetch(`${baseUrl}/api/data`, {
-    next: { revalidate: 6000 },
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to load projects");
-  }
-
-  return res.json() as Promise<HomeData>;
-}
 
 const ProjectsContent = async () => {
-  const { projects } = await fetchProjects();
-  console.log(projects)
+  const { projects } = await fetchData();
   return (
     <div className="space-y-8 mt-4">
       {projects.map((project, index) => (
