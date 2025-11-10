@@ -1,6 +1,6 @@
 # Netanel Nagar · Portfolio
 
-A Next.js 14 application showcasing projects, experience, and contact details for Netanel Nagar, Full Stack Developer.
+A Next.js 16 application showcasing projects, experience, and contact details for Netanel Nagar, Full Stack Developer.
 
 ## Tech Stack
 
