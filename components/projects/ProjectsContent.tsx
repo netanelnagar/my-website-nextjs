@@ -6,7 +6,9 @@ import { HomeData } from "@/app/api/data/route";
 
 async function fetchProjects(): Promise<HomeData> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  const res = await fetch(`${baseUrl}/api/data`);
+  const res = await fetch(`${baseUrl}/api/data`, {
+    next: { revalidate: 6000 },
+  });
 
   if (!res.ok) {
     throw new Error("Failed to load projects");
@@ -31,7 +33,7 @@ const ProjectsContent = async () => {
               width={250}
               height={250}
               alt={project.imgName}
-              
+
             />
           </div>
           <div className="w-full md:w-2/3 text-gray-600 leading-relaxed p-6 grid place-items-center overflow-y-auto space-y-6">

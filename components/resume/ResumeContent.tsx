@@ -6,7 +6,9 @@ import { getUrl } from "@/lib/firebase";
 
 
 async function fetchResumeData(): Promise<HomeData> {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/data`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/data`, {
+        next: { revalidate: 6000 },
+    });
 
     if (!response.ok) {
         throw new Error("Failed to load resume data");

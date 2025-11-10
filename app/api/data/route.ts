@@ -47,9 +47,6 @@ export async function GET(): Promise<NextResponse<HomeData | { error: string }>>
       }
     });
 
-    console.log(dataInOrder)
-
-
     return NextResponse.json(dataInOrder);
   } catch (error) {
     console.error("Failed to load resume data", error);
