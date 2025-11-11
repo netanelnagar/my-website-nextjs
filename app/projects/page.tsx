@@ -8,6 +8,8 @@ export const metadata: Metadata = {
     description: "A showcase of my projects demonstrating my skills and expertise as a Full Stack developer.",
 };
 
+export const dynamic = "force-dynamic";
+
 const Projects = () => {
       return (
         <section className="py-12 grow bg-slate-100/50">

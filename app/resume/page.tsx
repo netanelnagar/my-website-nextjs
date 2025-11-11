@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     "Explore my professional experience, skills, and accomplishments as a Full Stack developer through my comprehensive resume.",
 };
 
+export const dynamic = "force-dynamic";
+
 const ResumePage = () => {
   return (
     <section className="py-12 bg-slate-100/50">

@@ -12,7 +12,7 @@ const ProjectsContent = async () => {
           key={`${project.title}-${index}`}
           className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow flex flex-col sm:flex-row-reverse"
         >
-          <div className="w-full md:w-1/3 p-4 flex justify-center items-center">
+          <div className="w-full md:w-1/3 p-4 flex flex-col justify-center items-center">
             <ImageP
               src={project.imgName}
               width={250}
