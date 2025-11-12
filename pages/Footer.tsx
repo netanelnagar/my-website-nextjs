@@ -1,4 +1,5 @@
-const Footer = () => {
+const Footer = async () => {
+    "use cache"
     return (
         <footer className="py-4 text-black shadow-md">
             <div className="container flex items-center justify-center px-4 mx-auto">

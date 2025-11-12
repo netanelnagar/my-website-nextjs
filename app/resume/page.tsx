@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     "Explore my professional experience, skills, and accomplishments as a Full Stack developer through my comprehensive resume.",
 };
 
-export const dynamic = "force-dynamic";
 
 const ResumePage = () => {
   return (

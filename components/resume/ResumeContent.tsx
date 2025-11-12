@@ -3,9 +3,12 @@ import { HiScissors } from "react-icons/hi2";
 import { IoCodeSlashSharp } from "react-icons/io5";
 import { getUrl } from "@/lib/firebase";
 import { fetchData } from "@/lib/homeData";
+import { cacheLife } from "next/cache";
 
 
 const ResumeContent = async () => {
+    'use cache'
+    cacheLife('hours')
     const { experiences, professionalSkillsAndLanguages } = await fetchData();
     const url = await getUrl(process.env.RESUME_FILE_NAME || "netanelnagar-fullstack.pdf");
     return (

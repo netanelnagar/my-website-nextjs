@@ -1,4 +1,5 @@
 'use client';
+
 import Link from "next/link";
 import myImage from "../public/my-img.png";
 import { motion } from "motion/react";

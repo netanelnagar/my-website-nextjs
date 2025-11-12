@@ -1,9 +1,12 @@
 import { FaGithub } from "react-icons/fa6";
 import ImageP from "@/components/ImageP";
 import { fetchData } from "@/lib/homeData";
+import { cacheLife } from 'next/cache'
 
 
 const ProjectsContent = async () => {
+  'use cache'
+  cacheLife('hours')
   const { projects } = await fetchData();
   return (
     <div className="space-y-8 mt-4">
