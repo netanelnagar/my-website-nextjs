@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Netanel Nagar · Full Stack Developer",
     description:
-      "Explore projects, resume, and services from Netanel Nagar, a full stack developer helping businesses grow online.",
+      "Portfolio of Netanel Nagar, a full stack developer helping businesses get online and grow fast. Explore projects, resume, contact details, and services.",
     url: "/",
     siteName: "Netanel Nagar",
     locale: "en_US",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Netanel Nagar · Full Stack Developer",
     description:
-      "Explore projects, resume, and services from Netanel Nagar, a full stack developer helping businesses grow online.",
+      "Portfolio of Netanel Nagar, a full stack developer helping businesses get online and grow fast. Explore projects, resume, contact details, and services.",
   },
 };
 
